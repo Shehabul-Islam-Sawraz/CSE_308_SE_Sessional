@@ -1,3 +1,5 @@
+import viewModel.Accounts.AccountType;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,38 +15,40 @@ public class Main {
                 String[] command = line.split(" ");
                 switch (command[0]){
                     case "Create":
+                        bank.createAccount(command[1], AccountType.valueOf(command[2].toUpperCase()), Double.parseDouble(command[3]));
                         break;
-                    case "Deposit":
-                        break;
-                    case "Withdraw":
-                        break;
-                    case "Query":
-                        break;
-                    case "Request":
-                        break;
-                    case "Close":
-                        break;
-                    case "Open":
-                        break;
-                    case "Approve":
-                        break;
-                    case "Change":
-                        break;
-                    case "Lookup":
-                        break;
-                    case "See":
-                        break;
-                    case "INC":
-                        break;
-                    defaulf:
-                        break;
+//                    case "Deposit":
+//                        break;
+//                    case "Withdraw":
+//                        break;
+//                    case "Query":
+//                        break;
+//                    case "Request":
+//                        break;
+//                    case "Close":
+//                        break;
+//                    case "Open":
+//                        break;
+//                    case "Approve":
+//                        break;
+//                    case "Change":
+//                        break;
+//                    case "Lookup":
+//                        break;
+//                    case "See":
+//                        break;
+//                    case "INC":
+//                        break;
+//                    defaulf:
+//                        break;
                 }
             }
         } catch (FileNotFoundException e) {
             System.out.println("Input file not found!!");
         }
         catch (Exception e) {
-            System.out.println("Can't load the input file!!");
+            System.out.println("Some error occurred!!");
+            //e.printStackTrace();
         }
     }
 }
