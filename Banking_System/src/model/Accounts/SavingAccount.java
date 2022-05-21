@@ -1,13 +1,13 @@
 package model.Accounts;
 
-import common.InterestRate;
+import common.BankRate;
 import viewModel.Accounts.Account;
 import viewModel.Accounts.AccountType;
 
 public class SavingAccount extends Account {
 
     public SavingAccount(String username, double amount) {
-        super(username, AccountType.SAVINGS, amount, InterestRate.AccSavings);
+        super(username, AccountType.SAVINGS, amount, BankRate.AccSavings);
     }
 
     @Override
@@ -29,8 +29,14 @@ public class SavingAccount extends Account {
     }
 
     @Override
-    public void withdraw(double amount) {
-
+    public boolean withdraw(double amount) {
+        if(getAmount()-amount<1000){
+            return false;
+        }
+        else{
+            setAmount(getAmount()-amount);
+        }
+        return true;
     }
 
     @Override

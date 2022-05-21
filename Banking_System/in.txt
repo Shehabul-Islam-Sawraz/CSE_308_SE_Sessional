@@ -1,6 +1,6 @@
 Create Alice Student 1000
 Deposit 20000
-Withdraw 12,000
+Withdraw 12000
 Query
 Request 500
 Close

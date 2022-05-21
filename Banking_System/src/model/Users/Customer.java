@@ -77,14 +77,34 @@ public class Customer extends User {
         return true;
     }
 
-    public void deposit(double amount){
+    public boolean deposit(double amount){
         if(amount<0){
             System.out.println("You can't deposit invalid amount!!");
+            return false;
         }
         else{
             if(account.deposit(amount)){
                 System.out.println(amount + "$ deposited; Current balance " + account.getAmount() + "$");
+                return true;
             }
         }
+        return false;
+    }
+
+    public boolean withdraw(double amount){
+        if(amount<0){
+            System.out.println("You can't deposit invalid amount!!");
+            return false;
+        }
+        else{
+            if(account.withdraw(amount)){
+                System.out.println(amount + "$ withdrawn; Current balance " + account.getAmount() + "$");
+                return true;
+            }
+            else{
+                System.out.println("Invalid transaction; Current balance " + account.getAmount() + "$");
+            }
+        }
+        return false;
     }
 }

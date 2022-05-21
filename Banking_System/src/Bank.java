@@ -16,6 +16,7 @@ public class Bank {
     private Director director;
     private List<Officer> officers;
     private List<Cashier> cashiers;
+    private double fund=1000000;
 
     public Bank() {
         director = new Director("MD");
@@ -61,6 +62,12 @@ public class Bank {
             if(customer.createAccount(name,type,amount)) {
                 customers.add(customer);
                 loginType = customer;
+                if(type.equals(AccountType.LOAN)){
+                    fund-=amount;
+                }
+                else{
+                    fund+=amount;
+                }
             }
         }
     }
@@ -73,7 +80,23 @@ public class Bank {
             System.out.println("You don't have the permission for this action!!");
         }
         else{
-            ((Customer) loginType).deposit(amount);
+            if(((Customer) loginType).deposit(amount)){
+                fund+=amount;
+            }
+        }
+    }
+
+    public void withdraw(double amount){
+        if(loginType==null){
+            System.out.println("Please login for further actions!!");
+        }
+        else if(!(loginType instanceof Customer)){
+            System.out.println("You don't have the permission for this action!!");
+        }
+        else{
+            if(((Customer) loginType).withdraw(amount)){
+                fund-=amount;
+            }
         }
     }
 }

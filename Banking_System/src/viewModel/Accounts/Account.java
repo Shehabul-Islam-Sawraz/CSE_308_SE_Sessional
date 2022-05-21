@@ -6,6 +6,7 @@ public abstract class Account {
     private double amount;
     private double rate;
     private double reqLoanAmount = 0;
+    private int accountYear = 0;
 
     public Account(String username, AccountType type, double amount, double rate) {
         this.username = username;
@@ -46,8 +47,16 @@ public abstract class Account {
         this.reqLoanAmount = reqLoanAmount;
     }
 
+    public int getAccountYear() {
+        return accountYear;
+    }
+
+    public void setAccountYear(int accountYear) {
+        this.accountYear = accountYear;
+    }
+
     public abstract boolean deposit(double amount);
-    public abstract void withdraw(double amount);
+    public abstract boolean withdraw(double amount);
     public abstract void requestLoan(double amount);
     public abstract void queryDeposit();
 }

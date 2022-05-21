@@ -1,13 +1,13 @@
 package model.Accounts;
 
-import common.InterestRate;
+import common.BankRate;
 import viewModel.Accounts.Account;
 import viewModel.Accounts.AccountType;
 
 public class FDAccount extends Account {
 
     public FDAccount(String username, double amount) {
-        super(username, AccountType.FIXED_DEPOSIT, amount, InterestRate.AccFixedDeposits);
+        super(username, AccountType.FIXED_DEPOSIT, amount, BankRate.AccFixedDeposits);
     }
 
     @Override
@@ -33,8 +33,14 @@ public class FDAccount extends Account {
     }
 
     @Override
-    public void withdraw(double amount) {
-
+    public boolean withdraw(double amount) {
+        if(getAmount()<amount || getAccountYear()<1){
+            return false;
+        }
+        else{
+            setAmount(getAmount()-amount);
+        }
+        return true;
     }
 
     @Override

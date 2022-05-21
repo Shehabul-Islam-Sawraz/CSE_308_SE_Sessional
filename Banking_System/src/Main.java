@@ -20,8 +20,9 @@ public class Main {
                     case "Deposit":
                         bank.deposit(Double.parseDouble(command[1]));
                         break;
-//                    case "Withdraw":
-//                        break;
+                    case "Withdraw":
+                        bank.withdraw(Double.parseDouble(command[1]));
+                        break;
 //                    case "Query":
 //                        break;
 //                    case "Request":

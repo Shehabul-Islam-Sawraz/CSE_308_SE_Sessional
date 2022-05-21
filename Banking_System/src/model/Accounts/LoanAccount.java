@@ -1,13 +1,13 @@
 package model.Accounts;
 
-import common.InterestRate;
+import common.BankRate;
 import viewModel.Accounts.Account;
 import viewModel.Accounts.AccountType;
 
 public class LoanAccount extends Account {
 
     public LoanAccount(String username, double amount) {
-        super(username, AccountType.LOAN, amount, InterestRate.AccLoan);
+        super(username, AccountType.LOAN, amount, BankRate.AccLoan);
     }
 
     @Override
@@ -23,8 +23,8 @@ public class LoanAccount extends Account {
     }
 
     @Override
-    public void withdraw(double amount) {
-
+    public boolean withdraw(double amount) {
+        return false;
     }
 
     @Override
