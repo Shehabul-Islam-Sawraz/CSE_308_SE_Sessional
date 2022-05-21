@@ -64,4 +64,16 @@ public class Bank {
             }
         }
     }
+
+    public void deposit(double amount){
+        if(loginType==null){
+            System.out.println("Please login for further actions!!");
+        }
+        else if(!(loginType instanceof Customer)){
+            System.out.println("You don't have the permission for this action!!");
+        }
+        else{
+            ((Customer) loginType).deposit(amount);
+        }
+    }
 }

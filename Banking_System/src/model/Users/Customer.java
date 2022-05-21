@@ -76,4 +76,15 @@ public class Customer extends User {
         }
         return true;
     }
+
+    public void deposit(double amount){
+        if(amount<0){
+            System.out.println("You can't deposit invalid amount!!");
+        }
+        else{
+            if(account.deposit(amount)){
+                System.out.println(amount + "$ deposited; Current balance " + account.getAmount() + "$");
+            }
+        }
+    }
 }

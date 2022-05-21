@@ -11,8 +11,15 @@ public class LoanAccount extends Account {
     }
 
     @Override
-    public void deposit(double amount) {
-
+    public boolean deposit(double amount) {
+        double loan = getAmount();
+        if(loan>=amount){
+            setAmount(loan-amount);
+        }
+        else{
+            setAmount(0);
+        }
+        return true;
     }
 
     @Override

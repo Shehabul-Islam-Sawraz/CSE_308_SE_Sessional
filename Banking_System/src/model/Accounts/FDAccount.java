@@ -11,8 +11,25 @@ public class FDAccount extends Account {
     }
 
     @Override
-    public void deposit(double amount) {
-
+    public boolean deposit(double amount) {
+        if(amount<50000){
+            System.out.println("You can't deposit an amount of less than 50,000$!!");
+            return false;
+        }
+        else if(getReqLoanAmount()==0){
+            setAmount(getAmount()+amount);
+        }
+        else{
+            double loan = getReqLoanAmount();
+            if(loan>=amount){
+                setReqLoanAmount(loan-amount);
+            }
+            else{
+                setReqLoanAmount(0);
+                setAmount(getAmount()+amount-loan);
+            }
+        }
+        return true;
     }
 
     @Override

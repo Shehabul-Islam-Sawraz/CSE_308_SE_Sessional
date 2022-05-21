@@ -17,8 +17,9 @@ public class Main {
                     case "Create":
                         bank.createAccount(command[1], AccountType.valueOf(command[2].toUpperCase()), Double.parseDouble(command[3]));
                         break;
-//                    case "Deposit":
-//                        break;
+                    case "Deposit":
+                        bank.deposit(Double.parseDouble(command[1]));
+                        break;
 //                    case "Withdraw":
 //                        break;
 //                    case "Query":
