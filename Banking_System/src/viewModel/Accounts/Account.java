@@ -1,4 +1,4 @@
-package model.Accounts;
+package viewModel.Accounts;
 
 public abstract class Account {
     private final String username;

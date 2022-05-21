@@ -1,4 +1,4 @@
-package model.Accounts;
+package viewModel.Accounts;
 
 public enum AccountType {
     SAVINGS, STUDENT,LOAD,FIXED_DEPOSIT

@@ -1,4 +1,6 @@
-package model.Users;
+package viewModel.Users;
+
+import model.Users.Customer;
 
 public abstract class User {
     private final UserType type;
@@ -11,6 +13,6 @@ public abstract class User {
         return type;
     }
 
-    public abstract void lookUpUser(User user);
+    public abstract void lookUpCustomer(Customer customer);
     public abstract void approveLoan();
 }
