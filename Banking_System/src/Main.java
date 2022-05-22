@@ -29,8 +29,9 @@ public class Main {
                     case "Request":
                         bank.requestLoan(Double.parseDouble(command[1]));
                         break;
-//                    case "Close":
-//                        break;
+                    case "Close":
+                        bank.close();
+                        break;
 //                    case "Open":
 //                        break;
 //                    case "Approve":

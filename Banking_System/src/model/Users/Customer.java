@@ -127,4 +127,8 @@ public class Customer extends User {
             }
         }
     }
+
+    public void close(){
+        System.out.println("Transaction Closed for " + account.getUsername());
+    }
 }

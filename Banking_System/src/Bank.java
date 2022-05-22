@@ -20,7 +20,8 @@ public class Bank {
     private List<Map.Entry<Account,Double>> pendingLoans;
 
     public Bank() {
-        director = new Director("MD");
+        director = new Director(UserType.MANAGING_DIRECTOR);
+        director.setName("MD");
         officers = new ArrayList<>();
         cashiers = new ArrayList<>();
         customers = new ArrayList<>();
@@ -28,11 +29,13 @@ public class Bank {
         fund=1000000;
         pendingLoans = new ArrayList<>();
         for (int i = 1; i <= 2; i++) {
-            Officer officer = new Officer("O"+i);
+            Officer officer = new Officer(UserType.OFFICER);
+            officer.setName("O"+i);
             officers.add(officer);
         }
         for (int i = 1; i <= 5; i++) {
-            Cashier cashier = new Cashier("C"+i);
+            Cashier cashier = new Cashier(UserType.CASHIER);
+            cashier.setName("C"+i);
             cashiers.add(cashier);
         }
 
@@ -129,5 +132,25 @@ public class Bank {
                 System.out.println("Loan request successful, sent for approval");
             }
         }
+    }
+
+    public void close(){
+        if(loginType==null){
+            System.out.println("Please login for further actions!!");
+            return;
+        }
+        else if(loginType instanceof Customer){
+            ((Customer) loginType).close();
+        }
+        else if(loginType instanceof Director){
+            ((Director) loginType).close();
+        }
+        else if(loginType instanceof Officer){
+            ((Officer) loginType).close();
+        }
+        else if(loginType instanceof Cashier){
+            ((Cashier) loginType).close();
+        }
+        loginType=null;
     }
 }
