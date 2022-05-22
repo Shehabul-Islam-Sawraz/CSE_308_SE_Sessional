@@ -38,10 +38,12 @@ public class Main {
                     case "Approve":
                         bank.approveLoan();
                         break;
-//                    case "Change":
-//                        break;
-//                    case "Lookup":
-//                        break;
+                    case "Change":
+                        bank.changeInterestRate(AccountType.valueOf(command[1].toUpperCase()),Double.parseDouble(command[2]));
+                        break;
+                    case "Lookup":
+                        bank.lookUp(command[1]);
+                        break;
 //                    case "See":
 //                        break;
 //                    case "INC":

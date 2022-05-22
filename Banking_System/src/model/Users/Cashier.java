@@ -21,7 +21,8 @@ public class Cashier extends User {
 
     @Override
     public void lookUpCustomer(Customer customer) {
-
+        double money = customer.getAccount().getAmount()+customer.getAccount().getReqLoanAmount();
+        System.out.println(customer.getName() + "’s current balance " + money + "$");
     }
 
     @Override

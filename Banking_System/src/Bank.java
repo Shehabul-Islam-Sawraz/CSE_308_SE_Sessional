@@ -220,23 +220,44 @@ public class Bank {
             System.out.println("Invalid loan index!!");
         }
         else{
-            if(loginType instanceof Director){
-                if(((Director)loginType).approveLoan(pendingLoans.get(ln-1).getKey(),pendingLoans.get(ln-1).getValue(),fund)){
-                    pendingLoans.remove(ln-1);
-                }
-                else {
-                    System.out.println("Loan request disapproved. Bank doesn't have enough fund!!");
-                }
+            if(loginType.approveLoan(pendingLoans.get(ln-1).getKey(),pendingLoans.get(ln-1).getValue(),fund)){
+                fund-= pendingLoans.get(ln-1).getValue();
+                pendingLoans.remove(ln-1);
             }
-            else if(loginType instanceof Officer){
-                if(((Officer)loginType).approveLoan(pendingLoans.get(ln-1).getKey(),pendingLoans.get(ln-1).getValue(),fund)){
-                    pendingLoans.remove(ln-1);
-                }
-                else {
-                    System.out.println("Loan request disapproved. Bank doesn't have enough fund!!");
-                }
+            else {
+                System.out.println("Loan request disapproved. Bank doesn't have enough fund!!");
             }
         }
         System.out.println("--------------");
+    }
+
+    public void changeInterestRate(AccountType type, double rate){
+        if(!(loginType instanceof Director)){
+            System.out.println("You don’t have permission for this operation");
+            return;
+        }
+        ((Director)loginType).changeInterestRate(customers,type,rate);
+    }
+
+    public void lookUp(String name){
+        if(loginType==null){
+            System.out.println("Please login for further action!!");
+            return;
+        }
+        else if(loginType instanceof Customer){
+            System.out.println("You don't have the permission for this action!!");
+            return;
+        }
+        boolean found = false;
+        for(Customer c:customers){
+            if(c.getName().equals(name)){
+                found = true;
+                loginType.lookUpCustomer(c);
+                break;
+            }
+        }
+        if(!found){
+            System.out.println("No customer found with this name!!");
+        }
     }
 }
