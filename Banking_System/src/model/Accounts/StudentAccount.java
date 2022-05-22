@@ -56,9 +56,10 @@ public class StudentAccount extends Account {
     @Override
     public void incrementYear() {
         setAccountYear(getAccountYear()+1);
-        double newBalance = getAmount();
+        double newBalance = getAmount() + getReqLoanAmount();
         newBalance = newBalance + newBalance * (BankRate.InterestStudents / 100) - BankRate.ServiceCharge -
                 getReqLoanAmount() * (BankRate.InterestLoan / 100);
+        //System.out.println("New Balance: "+newBalance);
         setAmount(newBalance);
     }
 

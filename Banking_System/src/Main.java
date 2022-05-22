@@ -33,7 +33,15 @@ public class Main {
                         bank.close();
                         break;
                     case "Open":
-                        bank.loginAsEmployee(command[1].charAt(0)+"", command[1].charAt(1));
+                        char c = command[1].charAt(0);
+                        if(command[1].equals("MD") || (command.length==2 && (c=='O' || c=='C'))){
+                            bank.loginAsEmployee(c+"", command[1].charAt(1));
+                        }
+                        else{
+                            if(!bank.loginAsCustomer(command[1])){
+                                System.out.println("Invalid credentials!!");
+                            }
+                        }
                         break;
                     case "Approve":
                         bank.approveLoan();
@@ -58,8 +66,8 @@ public class Main {
             System.out.println("Input file not found!!");
         }
         catch (Exception e) {
-            System.out.println("Some error occurred!!");
-            //e.printStackTrace();
+            //System.out.println("Some error occurred!!");
+            e.printStackTrace();
         }
     }
 }

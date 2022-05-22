@@ -109,7 +109,8 @@ public class Customer extends User {
     }
 
     public void query(){
-        System.out.println("Current Balance "  + account.getAmount() + "$, loan "  + account.getReqLoanAmount() + "$");
+        double amount = account.getAmount() + account.getReqLoanAmount();
+        System.out.println("Current Balance "  + amount + "$, loan "  + account.getReqLoanAmount() + "$");
     }
 
     public Account requestLoan(double amount){
@@ -122,7 +123,7 @@ public class Customer extends User {
                 return account;
             }
             else{
-                System.out.println("Loan request unsuccessful!!");
+                //System.out.println("Loan request unsuccessful!!");
                 return null;
             }
         }

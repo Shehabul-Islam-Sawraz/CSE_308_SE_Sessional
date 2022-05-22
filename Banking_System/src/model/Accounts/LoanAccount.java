@@ -29,7 +29,7 @@ public class LoanAccount extends Account {
 
     @Override
     public boolean requestLoan(double amount) {
-        if(amount > ((getReqLoanAmount() * (1+BankRate.InterestRequestLoan)) / 100)) {
+        if(amount > ((getAmount() * (BankRate.InterestRequestLoan)) / 100)) {
             System.out.println("Loan account holder can't get more than 5% of the current loan!! ");
             return false;
         }
@@ -44,6 +44,7 @@ public class LoanAccount extends Account {
     @Override
     public void incrementYear() {
         setAccountYear(getAccountYear()+1);
-        setAmount(getAmount()+(getAmount()*(BankRate.InterestLoan/100)));
+        double balance = getAmount() + getReqLoanAmount();
+        setAmount(balance+(balance*(BankRate.InterestLoan/100)));
     }
 }

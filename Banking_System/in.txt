@@ -1,10 +1,10 @@
-Create Alice Student 1000
+Create Alice Loan 100000
 Deposit 20000
-Withdraw 12000
+Withdraw 6000
 Query
 Request 500
 Close
-Open O1
+Open MD
 Approve Loan
 Change Student 7.50
 Lookup Alice

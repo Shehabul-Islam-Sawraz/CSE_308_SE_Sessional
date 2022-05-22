@@ -201,9 +201,23 @@ public class Bank {
         }
     }
 
+    public boolean loginAsCustomer(String name){
+        for(Customer c:customers){
+            if(c.getName().equals(name)){
+                loginType = c;
+                System.out.println("Welcome back, " + c.getName());
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void approveLoan(){
         if(loginType==null || (loginType instanceof Cashier) || (loginType instanceof Customer)){
             System.out.println("You don't have the permission for this action!!");
+            return;
+        }
+        else if(pendingLoans.size()==0){
             return;
         }
         Scanner sc = new Scanner(System.in);
