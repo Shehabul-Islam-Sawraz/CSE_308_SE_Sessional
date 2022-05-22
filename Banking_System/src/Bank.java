@@ -153,4 +153,38 @@ public class Bank {
         }
         loginType=null;
     }
+
+    public void loginAsEmployee(String name, char c){
+        if(name.equals("M")){
+            Director director = new Director(UserType.MANAGING_DIRECTOR);
+            loginType = director;
+            System.out.print("MD active.");
+            if(pendingLoans.size()>0){
+                System.out.println(" There are loan approvals pending");
+            }
+            else{
+                System.out.println(" There are no loan approval pending");
+            }
+        }
+        else if(name.equals("O")){
+            Officer officer = new Officer(UserType.OFFICER);
+            loginType = officer;
+            System.out.print("O" + c + " active.");
+            if(pendingLoans.size()>0){
+                System.out.println(" There are loan approvals pending");
+            }
+            else{
+                System.out.println(" There are no loan approval pending");
+            }
+        }
+        else if(name.equals("C")){
+            Cashier cashier = new Cashier(UserType.CASHIER);
+            loginType = cashier;
+            System.out.println("O" + c + " active.");
+        }
+        else{
+            System.out.println("Please login as a valid employee!!");
+            loginType = null;
+        }
+    }
 }

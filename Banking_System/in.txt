@@ -4,7 +4,7 @@ Withdraw 12000
 Query
 Request 500
 Close
-Open S1
+Open O1
 Approve Loan
 Change Student 7.50
 Lookup Alice
