@@ -1,6 +1,7 @@
 package viewModel.Users;
 
 import model.Users.Customer;
+import viewModel.Accounts.Account;
 
 public abstract class User {
     private final UserType type;
@@ -14,5 +15,5 @@ public abstract class User {
     }
 
     public abstract void lookUpCustomer(Customer customer);
-    public abstract void approveLoan();
+    public abstract boolean approveLoan(Account account, double amount, double fund);
 }

@@ -1,5 +1,6 @@
 package model.Users;
 
+import viewModel.Accounts.Account;
 import viewModel.Users.User;
 import viewModel.Users.UserType;
 
@@ -24,8 +25,8 @@ public class Cashier extends User {
     }
 
     @Override
-    public void approveLoan() {
-
+    public boolean approveLoan(Account account, double amount, double fund) {
+        return false;
     }
 
     public void close(){

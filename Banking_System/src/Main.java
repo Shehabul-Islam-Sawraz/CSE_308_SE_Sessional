@@ -35,8 +35,9 @@ public class Main {
                     case "Open":
                         bank.loginAsEmployee(command[1].charAt(0)+"", command[1].charAt(1));
                         break;
-//                    case "Approve":
-//                        break;
+                    case "Approve":
+                        bank.approveLoan();
+                        break;
 //                    case "Change":
 //                        break;
 //                    case "Lookup":

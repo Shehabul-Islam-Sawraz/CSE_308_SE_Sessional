@@ -39,8 +39,8 @@ public class Customer extends User {
     }
 
     @Override
-    public void approveLoan() {
-        System.out.println("You don't have the permission for this action!!");
+    public boolean approveLoan(Account account,double amount,double fund) {
+        return false;
     }
 
     public boolean createAccount(String name, AccountType type, double amount){

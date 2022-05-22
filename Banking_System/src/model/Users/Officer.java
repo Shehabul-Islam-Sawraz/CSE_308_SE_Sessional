@@ -1,5 +1,6 @@
 package model.Users;
 
+import viewModel.Accounts.Account;
 import viewModel.Users.User;
 import viewModel.Users.UserType;
 
@@ -24,8 +25,13 @@ public class Officer extends User {
     }
 
     @Override
-    public void approveLoan() {
-
+    public boolean approveLoan(Account account, double amount, double fund) {
+        if(fund<amount){
+            return false;
+        }
+        account.setReqLoanAmount(amount);
+        System.out.println("Loan for " + account.getUsername() + " approved");
+        return true;
     }
 
     public void close(){

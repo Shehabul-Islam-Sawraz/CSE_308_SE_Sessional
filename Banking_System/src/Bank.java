@@ -156,7 +156,6 @@ public class Bank {
 
     public void loginAsEmployee(String name, char c){
         if(name.equals("M")){
-            Director director = new Director(UserType.MANAGING_DIRECTOR);
             loginType = director;
             System.out.print("MD active.");
             if(pendingLoans.size()>0){
@@ -167,8 +166,15 @@ public class Bank {
             }
         }
         else if(name.equals("O")){
-            Officer officer = new Officer(UserType.OFFICER);
-            loginType = officer;
+            for(Officer o:officers){
+                if(o.getName().equals("O"+c)){
+                    loginType = o;
+                }
+            }
+            if(loginType==null){
+                System.out.println("No officer found with this id!!");
+                return;
+            }
             System.out.print("O" + c + " active.");
             if(pendingLoans.size()>0){
                 System.out.println(" There are loan approvals pending");
@@ -178,13 +184,59 @@ public class Bank {
             }
         }
         else if(name.equals("C")){
-            Cashier cashier = new Cashier(UserType.CASHIER);
-            loginType = cashier;
-            System.out.println("O" + c + " active.");
+            for(Cashier ca:cashiers){
+                if(ca.getName().equals("C"+c)){
+                    loginType = ca;
+                }
+            }
+            if(loginType==null){
+                System.out.println("No cashier found with this id!!");
+                return;
+            }
+            System.out.println("C" + c + " active.");
         }
         else{
             System.out.println("Please login as a valid employee!!");
             loginType = null;
         }
+    }
+
+    public void approveLoan(){
+        if(loginType==null || (loginType instanceof Cashier) || (loginType instanceof Customer)){
+            System.out.println("You don't have the permission for this action!!");
+            return;
+        }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--------------");
+        int x=1;
+        for(Map.Entry<Account,Double> entry:pendingLoans){
+            Account ac = entry.getKey();
+            double amount = (double)entry.getValue();
+            System.out.println(x + ". Loan for the account owner " + ac.getUsername() + " pending of " + amount + "$");
+        }
+        System.out.print("Select a loan index number that you want to approve: ");
+        int ln = sc.nextInt();
+        if(ln==0 || ln>pendingLoans.size()){
+            System.out.println("Invalid loan index!!");
+        }
+        else{
+            if(loginType instanceof Director){
+                if(((Director)loginType).approveLoan(pendingLoans.get(ln-1).getKey(),pendingLoans.get(ln-1).getValue(),fund)){
+                    pendingLoans.remove(ln-1);
+                }
+                else {
+                    System.out.println("Loan request disapproved. Bank doesn't have enough fund!!");
+                }
+            }
+            else if(loginType instanceof Officer){
+                if(((Officer)loginType).approveLoan(pendingLoans.get(ln-1).getKey(),pendingLoans.get(ln-1).getValue(),fund)){
+                    pendingLoans.remove(ln-1);
+                }
+                else {
+                    System.out.println("Loan request disapproved. Bank doesn't have enough fund!!");
+                }
+            }
+        }
+        System.out.println("--------------");
     }
 }
