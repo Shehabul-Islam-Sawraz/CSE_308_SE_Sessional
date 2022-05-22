@@ -260,4 +260,20 @@ public class Bank {
             System.out.println("No customer found with this name!!");
         }
     }
+
+    public void seeFund(){
+        if(!(loginType instanceof Director)){
+            System.out.println("You don’t have permission for this operation");
+            return;
+        }
+        ((Director)loginType).seeFund(fund);
+    }
+
+    public void incrementYear(){
+        for(Customer c:customers){
+            Account ac = c.getAccount();
+            ac.incrementYear();
+        }
+        System.out.println("1 year passed");
+    }
 }

@@ -10,4 +10,5 @@ public class BankRate {
     public static final int LoanStudent = 1000;
     public static final int LoanFixedDeposit = 100000;
     public static final double InterestRequestLoan = 5;
+    public static double ServiceCharge = 500;
 }

@@ -59,4 +59,6 @@ public abstract class Account {
     public abstract boolean withdraw(double amount);
     public abstract boolean requestLoan(double amount);
     public abstract void queryDeposit();
+
+    public abstract void incrementYear();
 }

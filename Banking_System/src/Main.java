@@ -44,12 +44,14 @@ public class Main {
                     case "Lookup":
                         bank.lookUp(command[1]);
                         break;
-//                    case "See":
-//                        break;
-//                    case "INC":
-//                        break;
-//                    defaulf:
-//                        break;
+                    case "See":
+                        bank.seeFund();
+                        break;
+                    case "INC":
+                        bank.incrementYear();
+                        break;
+                    default:
+                        break;
                 }
             }
         } catch (FileNotFoundException e) {

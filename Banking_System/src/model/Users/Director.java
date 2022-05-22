@@ -68,4 +68,8 @@ public class Director extends User {
         }
         System.out.println("Interest rate changed for " + type.name() + " type accounts to " + rate + "%");
     }
+
+    public void seeFund(double fund){
+        System.out.println("Internal fund currently of the bank is: " + fund + "$");
+    }
 }

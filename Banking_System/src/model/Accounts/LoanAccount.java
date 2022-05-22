@@ -40,4 +40,10 @@ public class LoanAccount extends Account {
     public void queryDeposit() {
 
     }
+
+    @Override
+    public void incrementYear() {
+        setAccountYear(getAccountYear()+1);
+        setAmount(getAmount()+(getAmount()*(BankRate.InterestLoan/100)));
+    }
 }
