@@ -57,6 +57,6 @@ public abstract class Account {
 
     public abstract boolean deposit(double amount);
     public abstract boolean withdraw(double amount);
-    public abstract void requestLoan(double amount);
+    public abstract boolean requestLoan(double amount);
     public abstract void queryDeposit();
 }

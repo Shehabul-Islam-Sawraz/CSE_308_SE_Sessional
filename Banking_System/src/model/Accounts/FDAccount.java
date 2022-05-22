@@ -7,7 +7,7 @@ import viewModel.Accounts.AccountType;
 public class FDAccount extends Account {
 
     public FDAccount(String username, double amount) {
-        super(username, AccountType.FIXED_DEPOSIT, amount, BankRate.AccFixedDeposits);
+        super(username, AccountType.FIXED_DEPOSIT, amount, BankRate.InterestFixedDeposits);
     }
 
     @Override
@@ -44,8 +44,12 @@ public class FDAccount extends Account {
     }
 
     @Override
-    public void requestLoan(double amount) {
-
+    public boolean requestLoan(double amount) {
+        if(getReqLoanAmount() + amount > BankRate.LoanFixedDeposit) {
+            System.out.println("Fixed deposit account holder can't get more loans than " + BankRate.LoanFixedDeposit + "$");
+            return false;
+        }
+        return true;
     }
 
     @Override

@@ -23,10 +23,12 @@ public class Main {
                     case "Withdraw":
                         bank.withdraw(Double.parseDouble(command[1]));
                         break;
-//                    case "Query":
-//                        break;
-//                    case "Request":
-//                        break;
+                    case "Query":
+                        bank.query();
+                        break;
+                    case "Request":
+                        bank.requestLoan(Double.parseDouble(command[1]));
+                        break;
 //                    case "Close":
 //                        break;
 //                    case "Open":

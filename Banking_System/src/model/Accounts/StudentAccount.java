@@ -7,7 +7,7 @@ import viewModel.Accounts.AccountType;
 public class StudentAccount extends Account {
 
     public StudentAccount(String username, double amount) {
-        super(username, AccountType.STUDENT, amount, BankRate.AccStudents);
+        super(username, AccountType.STUDENT, amount, BankRate.InterestStudents);
     }
 
     @Override
@@ -40,8 +40,12 @@ public class StudentAccount extends Account {
     }
 
     @Override
-    public void requestLoan(double amount) {
-
+    public boolean requestLoan(double amount) {
+        if(getReqLoanAmount() + amount > BankRate.LoanStudent) {
+            System.out.print("Student account holder can't get more loans than " + BankRate.LoanStudent + "$");
+            return false;
+        }
+        return true;
     }
 
     @Override

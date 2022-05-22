@@ -3,12 +3,12 @@ import model.Users.Cashier;
 import model.Users.Customer;
 import model.Users.Director;
 import model.Users.Officer;
+import viewModel.Accounts.Account;
 import viewModel.Accounts.AccountType;
 import viewModel.Users.User;
 import viewModel.Users.UserType;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Bank {
     private List<Customer> customers;
@@ -16,7 +16,8 @@ public class Bank {
     private Director director;
     private List<Officer> officers;
     private List<Cashier> cashiers;
-    private double fund=1000000;
+    private double fund;
+    private List<Map.Entry<Account,Double>> pendingLoans;
 
     public Bank() {
         director = new Director("MD");
@@ -24,6 +25,8 @@ public class Bank {
         cashiers = new ArrayList<>();
         customers = new ArrayList<>();
         loginType = null;
+        fund=1000000;
+        pendingLoans = new ArrayList<>();
         for (int i = 1; i <= 2; i++) {
             Officer officer = new Officer("O"+i);
             officers.add(officer);
@@ -96,6 +99,34 @@ public class Bank {
         else{
             if(((Customer) loginType).withdraw(amount)){
                 fund-=amount;
+            }
+        }
+    }
+
+    public void query(){
+        if(loginType==null){
+            System.out.println("Please login for further actions!!");
+        }
+        else if(!(loginType instanceof Customer)){
+            System.out.println("You don't have the permission for this action!!");
+        }
+        else{
+            ((Customer) loginType).query();
+        }
+    }
+
+    public void requestLoan(double amount){
+        if(loginType==null){
+            System.out.println("Please login for further actions!!");
+        }
+        else if(!(loginType instanceof Customer)){
+            System.out.println("You don't have the permission for this action!!");
+        }
+        else{
+            Account ac = ((Customer) loginType).requestLoan(amount);
+            if(ac!=null){
+                pendingLoans.add(new AbstractMap.SimpleEntry<>(ac,amount));
+                System.out.println("Loan request successful, sent for approval");
             }
         }
     }

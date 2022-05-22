@@ -7,7 +7,7 @@ import viewModel.Accounts.AccountType;
 public class LoanAccount extends Account {
 
     public LoanAccount(String username, double amount) {
-        super(username, AccountType.LOAN, amount, BankRate.AccLoan);
+        super(username, AccountType.LOAN, amount, BankRate.InterestLoan);
     }
 
     @Override
@@ -28,8 +28,12 @@ public class LoanAccount extends Account {
     }
 
     @Override
-    public void requestLoan(double amount) {
-
+    public boolean requestLoan(double amount) {
+        if(amount > ((getReqLoanAmount() * (1+BankRate.InterestRequestLoan)) / 100)) {
+            System.out.println("Loan account holder can't get more than 5% of the current loan!! ");
+            return false;
+        }
+        return true;
     }
 
     @Override

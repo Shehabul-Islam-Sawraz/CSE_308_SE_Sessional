@@ -107,4 +107,24 @@ public class Customer extends User {
         }
         return false;
     }
+
+    public void query(){
+        System.out.println("Current Balance "  + account.getAmount() + "$, loan "  + account.getReqLoanAmount() + "$");
+    }
+
+    public Account requestLoan(double amount){
+        if(amount<0){
+            System.out.println("You can't request loan for invalid amount!!");
+            return null;
+        }
+        else{
+            if(account.requestLoan(amount)){
+                return account;
+            }
+            else{
+                System.out.println("Loan request unsuccessful!!");
+                return null;
+            }
+        }
+    }
 }
