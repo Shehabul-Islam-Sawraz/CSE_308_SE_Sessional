@@ -13,49 +13,49 @@ public class Main {
             Bank bank = new Bank();
             while ((line = br.readLine()) != null) {
                 String[] command = line.split(" ");
-                switch (command[0]){
-                    case "Create":
-                        bank.createAccount(command[1], AccountType.valueOf(command[2].toUpperCase()), Double.parseDouble(command[3]));
+                switch (command[0].toLowerCase()){
+                    case "create":
+                        bank.createAccount(command[1].toLowerCase(), AccountType.valueOf(command[2].toUpperCase()), Double.parseDouble(command[3]));
                         break;
-                    case "Deposit":
+                    case "deposit":
                         bank.deposit(Double.parseDouble(command[1]));
                         break;
-                    case "Withdraw":
+                    case "withdraw":
                         bank.withdraw(Double.parseDouble(command[1]));
                         break;
-                    case "Query":
+                    case "query":
                         bank.query();
                         break;
-                    case "Request":
+                    case "request":
                         bank.requestLoan(Double.parseDouble(command[1]));
                         break;
-                    case "Close":
+                    case "close":
                         bank.close();
                         break;
-                    case "Open":
-                        char c = command[1].charAt(0);
-                        if(command[1].equals("MD") || (command.length==2 && (c=='O' || c=='C'))){
+                    case "open":
+                        char c = command[1].toLowerCase().charAt(0);
+                        if(command[1].toLowerCase().equals("md") || (command.length==2 && (c=='o' || c=='c'))){
                             bank.loginAsEmployee(c+"", command[1].charAt(1));
                         }
                         else{
-                            if(!bank.loginAsCustomer(command[1])){
+                            if(!bank.loginAsCustomer(command[1].toLowerCase())){
                                 System.out.println("Invalid credentials!!");
                             }
                         }
                         break;
-                    case "Approve":
+                    case "approve":
                         bank.approveLoan();
                         break;
-                    case "Change":
+                    case "change":
                         bank.changeInterestRate(AccountType.valueOf(command[1].toUpperCase()),Double.parseDouble(command[2]));
                         break;
-                    case "Lookup":
-                        bank.lookUp(command[1]);
+                    case "lookup":
+                        bank.lookUp(command[1].toLowerCase());
                         break;
-                    case "See":
+                    case "see":
                         bank.seeFund();
                         break;
-                    case "INC":
+                    case "inc":
                         bank.incrementYear();
                         break;
                     default:
@@ -66,8 +66,8 @@ public class Main {
             System.out.println("Input file not found!!");
         }
         catch (Exception e) {
-            //System.out.println("Some error occurred!!");
-            e.printStackTrace();
+            System.out.println("Some error occurred!!");
+            //e.printStackTrace();
         }
     }
 }

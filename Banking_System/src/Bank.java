@@ -155,49 +155,49 @@ public class Bank {
     }
 
     public void loginAsEmployee(String name, char c){
-        if(name.equals("M")){
-            loginType = director;
-            System.out.print("MD active.");
-            if(pendingLoans.size()>0){
-                System.out.println(" There are loan approvals pending");
-            }
-            else{
-                System.out.println(" There are no loan approval pending");
-            }
-        }
-        else if(name.equals("O")){
-            for(Officer o:officers){
-                if(o.getName().equals("O"+c)){
-                    loginType = o;
+        switch (name) {
+            case "m":
+                loginType = director;
+                System.out.print("MD active.");
+                if (pendingLoans.size() > 0) {
+                    System.out.println(" There are loan approvals pending");
+                } else {
+                    System.out.println(" There are no loan approval pending");
                 }
-            }
-            if(loginType==null){
-                System.out.println("No officer found with this id!!");
-                return;
-            }
-            System.out.print("O" + c + " active.");
-            if(pendingLoans.size()>0){
-                System.out.println(" There are loan approvals pending");
-            }
-            else{
-                System.out.println(" There are no loan approval pending");
-            }
-        }
-        else if(name.equals("C")){
-            for(Cashier ca:cashiers){
-                if(ca.getName().equals("C"+c)){
-                    loginType = ca;
+                break;
+            case "o":
+                for (Officer o : officers) {
+                    if (o.getName().equals("O" + c)) {
+                        loginType = o;
+                    }
                 }
-            }
-            if(loginType==null){
-                System.out.println("No cashier found with this id!!");
-                return;
-            }
-            System.out.println("C" + c + " active.");
-        }
-        else{
-            System.out.println("Please login as a valid employee!!");
-            loginType = null;
+                if (loginType == null) {
+                    System.out.println("No officer found with this id!!");
+                    return;
+                }
+                System.out.print("O" + c + " active.");
+                if (pendingLoans.size() > 0) {
+                    System.out.println(" There are loan approvals pending");
+                } else {
+                    System.out.println(" There are no loan approval pending");
+                }
+                break;
+            case "c":
+                for (Cashier ca : cashiers) {
+                    if (ca.getName().equals("C" + c)) {
+                        loginType = ca;
+                    }
+                }
+                if (loginType == null) {
+                    System.out.println("No cashier found with this id!!");
+                    return;
+                }
+                System.out.println("C" + c + " active.");
+                break;
+            default:
+                System.out.println("Please login as a valid employee!!");
+                loginType = null;
+                break;
         }
     }
 
@@ -225,7 +225,7 @@ public class Bank {
         int x=1;
         for(Map.Entry<Account,Double> entry:pendingLoans){
             Account ac = entry.getKey();
-            double amount = (double)entry.getValue();
+            double amount = entry.getValue();
             System.out.println(x + ". Loan for the account owner " + ac.getUsername() + " pending of " + amount + "$");
         }
         System.out.print("Select a loan index number that you want to approve: ");
