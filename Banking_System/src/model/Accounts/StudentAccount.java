@@ -59,7 +59,6 @@ public class StudentAccount extends Account {
         double newBalance = getAmount() + getReqLoanAmount();
         newBalance = newBalance + newBalance * (BankRate.InterestStudents / 100) - BankRate.ServiceCharge -
                 getReqLoanAmount() * (BankRate.InterestLoan / 100);
-        //System.out.println("New Balance: "+newBalance);
         setAmount(newBalance);
     }
 

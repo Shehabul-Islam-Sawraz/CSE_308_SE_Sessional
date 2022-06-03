@@ -61,7 +61,7 @@ public class FDAccount extends Account {
     public void incrementYear() {
         setAccountYear(getAccountYear()+1);
         double newBalance = getAmount() + getReqLoanAmount();
-        newBalance = newBalance + newBalance * (BankRate.InterestStudents / 100) - BankRate.ServiceCharge -
+        newBalance = newBalance + newBalance * (BankRate.InterestFixedDeposits / 100) - BankRate.ServiceCharge -
                 getReqLoanAmount() * (BankRate.InterestLoan / 100);
         setAmount(newBalance);
     }
