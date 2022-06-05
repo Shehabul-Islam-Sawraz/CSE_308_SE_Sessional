@@ -2,7 +2,7 @@ package Components.ControlUnit;
 
 import Components.Part;
 
-public class ATMega32 implements Part {
+public class ATMega32 extends ControlUnit {
     @Override
     public double getPrice() {
         return 100;

@@ -2,7 +2,7 @@ package Components.ControlUnit;
 
 import Components.Part;
 
-public class RaspberryPi implements Part {
+public class RaspberryPi extends ControlUnit {
     @Override
     public double getPrice() {
         return 250;

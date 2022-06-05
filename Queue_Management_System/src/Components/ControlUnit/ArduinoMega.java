@@ -2,7 +2,7 @@ package Components.ControlUnit;
 
 import Components.Part;
 
-public class ArduinoMega implements Part {
+public class ArduinoMega extends ControlUnit {
     @Override
     public double getPrice() {
         return 200;

@@ -1,8 +1,6 @@
 package Components.CommModule;
 
-import Components.Part;
-
-public class WiFiModule implements Part {
+public class WiFiModule extends CommunicationModule {
     @Override
     public double getPrice() {
         return 4000;

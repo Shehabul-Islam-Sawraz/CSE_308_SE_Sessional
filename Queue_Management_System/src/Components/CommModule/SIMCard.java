@@ -1,8 +1,6 @@
 package Components.CommModule;
 
-import Components.Part;
-
-public class SIMCard implements Part {
+public class SIMCard extends CommunicationModule {
     @Override
     public double getPrice() {
         return 200;

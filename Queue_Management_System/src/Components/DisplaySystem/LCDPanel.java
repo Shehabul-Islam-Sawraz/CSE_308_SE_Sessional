@@ -2,7 +2,7 @@ package Components.DisplaySystem;
 
 import Components.Part;
 
-public class LCDPanel implements Part {
+public class LCDPanel extends DisplaySystem {
     @Override
     public double getPrice() {
         return 50;

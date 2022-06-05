@@ -1,8 +1,6 @@
 package Components.CommMedium;
 
-import Components.Part;
-
-public class Broadband implements Part {
+public class Broadband extends CommunicationSystem {
     @Override
     public double getPrice() {
         return 1200;

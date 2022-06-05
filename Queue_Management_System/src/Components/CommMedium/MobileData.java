@@ -1,11 +1,9 @@
 package Components.CommMedium;
 
-import Components.Part;
-
-public class MobileData implements Part {
+public class MobileData extends CommunicationSystem {
     @Override
     public double getPrice() {
-        return 6000;
+        return 700;
     }
 
     @Override
