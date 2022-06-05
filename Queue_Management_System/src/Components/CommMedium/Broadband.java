@@ -1,4 +1,4 @@
-package Components.CommSystem.CommMedium;
+package Components.CommMedium;
 
 import Components.Part;
 

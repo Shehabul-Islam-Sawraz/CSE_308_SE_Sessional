@@ -1,4 +1,4 @@
-package Components.CommSystem.CommModule;
+package Components.CommModule;
 
 import Components.Part;
 
