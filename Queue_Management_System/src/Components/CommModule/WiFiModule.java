@@ -8,6 +8,6 @@ public class WiFiModule extends CommunicationModule {
 
     @Override
     public String partDescription() {
-        return "A Wifi Module Unit having price of "+ getPrice();
+        return "A Wifi Module Unit, for setting up wifi connection, having price of "+ getPrice()+" tk. ";
     }
 }

@@ -10,6 +10,6 @@ public class ATMega32 extends ControlUnit {
 
     @Override
     public String partDescription() {
-        return "An ATMega32 Controller Unit having price of "+ getPrice();
+        return "An ATMega32 Controller Unit for receiving and processing data\nfrom web-based control unit having price of "+ getPrice()+" tk. ";
     }
 }

@@ -8,6 +8,6 @@ public class Broadband extends CommunicationSystem {
 
     @Override
     public String partDescription() {
-        return "Broadband connection!!";
+        return "Broadband connection for communication!!";
     }
 }

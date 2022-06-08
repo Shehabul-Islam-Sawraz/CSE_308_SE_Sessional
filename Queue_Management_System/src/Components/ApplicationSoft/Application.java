@@ -10,6 +10,6 @@ public class Application implements Part {
 
     @Override
     public String partDescription() {
-        return "Web-Based Controller Application having price of "+getPrice();
+        return "Web-Based Controller Application for controlling display units\nover the internet having price of "+getPrice()+" tk. ";
     }
 }

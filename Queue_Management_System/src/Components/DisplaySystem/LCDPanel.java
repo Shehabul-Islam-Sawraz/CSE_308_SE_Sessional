@@ -10,6 +10,6 @@ public class LCDPanel extends DisplaySystem {
 
     @Override
     public String partDescription() {
-        return "A LCD Display Panel having price of "+ getPrice();
+        return "A LCD Display Panel having price of "+ getPrice()+" tk. ";
     }
 }

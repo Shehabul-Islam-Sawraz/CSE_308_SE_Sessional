@@ -10,6 +10,6 @@ public class ArduinoMega extends ControlUnit {
 
     @Override
     public String partDescription() {
-        return "An Arduino Mega Controller Unit having price of "+ getPrice();
+        return "An Arduino Mega Controller Unit for receiving and processing data\nfrom web-based control unit having price of "+ getPrice()+" tk. ";
     }
 }

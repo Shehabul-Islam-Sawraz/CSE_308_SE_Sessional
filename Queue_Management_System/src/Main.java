@@ -24,7 +24,7 @@ public class Main {
                 director.construct(systemBuilder, words[1], Integer.parseInt(words[2]));
                 product = systemBuilder.getQueue();
                 product.show();
-                System.out.println("------------------------------------");
+                System.out.println("----------------------------------------------------");
             }
         } catch (Exception e) {
             //System.out.println("File not found");

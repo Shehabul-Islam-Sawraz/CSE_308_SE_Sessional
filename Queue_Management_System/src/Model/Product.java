@@ -31,7 +31,7 @@ public class Product {
         }
         System.out.println();
         System.out.print("Total cost for the components of the queue management system is: "+totalCost+" tk. ");
-        System.out.println("Having additional communication cost of: "+yearlyCost/12.0+" tk/per month.");
+        System.out.println("It also has additional communication cost of: "+yearlyCost/12.0+" tk/per month.");
         System.out.println("Total yearly communication cost is: "+yearlyCost+" tk.");
     }
 }

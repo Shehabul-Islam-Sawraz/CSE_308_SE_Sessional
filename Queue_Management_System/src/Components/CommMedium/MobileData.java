@@ -8,6 +8,6 @@ public class MobileData extends CommunicationSystem {
 
     @Override
     public String partDescription() {
-        return "Mobile Data Service!!";
+        return "Mobile Data Service for communication!!";
     }
 }
