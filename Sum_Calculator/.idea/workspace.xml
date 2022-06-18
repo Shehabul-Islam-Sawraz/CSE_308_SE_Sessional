@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="303fab91-3ec6-4ef8-b094-3f0f0795b0f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Burger_Shop/Burger_Shop.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/Sum_Calculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/out/production/SumCalculator/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/out/production/SumCalculator/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/out/production/SumCalculator/SumAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/out/production/SumCalculator/SumCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/out/production/SumCalculator/SumFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/src/FileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/src/SumAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/src/SumCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SumCalculator/src/SumFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SumCalculator/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SumCalculator/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SumCalculator/SumAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SumCalculator/SumCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SumCalculator/SumFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SumAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SumAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SumCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SumCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SumFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SumFunction.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AkZghUiV38Nt0TiN6EFCJLygQX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Sum_Calculator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="303fab91-3ec6-4ef8-b094-3f0f0795b0f0" name="Changes" comment="" />
+      <created>1655555658370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655555658370</updated>
+      <workItem from="1655555659592" duration="52000" />
+      <workItem from="1655555871452" duration="43000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
