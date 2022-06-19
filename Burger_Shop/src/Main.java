@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice;
+        int choice,subchoice;
         Burger burger;
 
         while (true){
@@ -28,27 +28,47 @@ public class Main {
             switch (choice){
                 case 1:
                     burger = new ExtraCheese(new FrenchFries(new BeefBurger()));
-                    System.out.println("Total Price of Your Order: " + burger.getPrice());
+                    System.out.println("\nTotal Price of Your Order: " + burger.getPrice());
                     break;
                 case 2:
+                    System.out.print("How many drinks do you want: ");
+                    subchoice = scanner.nextInt();
                     burger = new Water(new OnionRings(new VeggiBurger()));
-                    System.out.println("Total Price of Your Order: " + burger.getPrice());
+                    for (int i=0;i<subchoice-1;i++){
+                        burger = new Water(burger);
+                    }
+                    System.out.println("\nTotal Price of Your Order: " + burger.getPrice());
                     break;
                 case 3:
+                    System.out.print("How many drinks do you want: ");
+                    subchoice = scanner.nextInt();
                     burger = new Coke(new FrenchFries(new VeggiBurger()));
-                    System.out.println("Total Price of Your Order: " + burger.getPrice());
+                    for (int i=0;i<subchoice-1;i++){
+                        burger = new Coke(burger);
+                    }
+                    System.out.println("\nTotal Price of Your Order: " + burger.getPrice());
                     break;
                 case 4:
+                    System.out.print("How many Water bottle do you want: ");
+                    subchoice = scanner.nextInt();
                     burger = new Water(new Coffee(new OnionRings(new VeggiBurger())));
-                    System.out.println("Total Price of Your Order: " + burger.getPrice());
+                    for (int i=0;i<subchoice-1;i++){
+                        burger = new Water(burger);
+                    }
+                    System.out.print("\nHow many Coffee do you want: ");
+                    subchoice = scanner.nextInt();
+                    for (int i=0;i<subchoice-1;i++){
+                        burger = new Coffee(burger);
+                    }
+                    System.out.println("\nTotal Price of Your Order: " + burger.getPrice());
                     break;
                 case 5:
                     burger = new BeefBurger();
-                    System.out.println("Total Price of Your Order: " + burger.getPrice());
+                    System.out.println("\nTotal Price of Your Order: " + burger.getPrice());
                     break;
                 default:
                     burger = null;
-                    System.out.println("Not available!!");
+                    System.out.println("\nNot available!!");
                     break;
             }
             if(choice>5) {
