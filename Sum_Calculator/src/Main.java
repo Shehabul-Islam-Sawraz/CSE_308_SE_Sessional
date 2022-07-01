@@ -1,8 +1,8 @@
 
 public class Main {
     public static void main(String[] args) {
-        FileController fileController = new FileController();
-        int sum = fileController.calculateSum("input.txt");
+        SumAdapter sumAdapter = new SumAdapter();
+        int sum = sumAdapter.calculateSum("input.txt");
         System.out.println("Sum is: "+sum);
     }
 }
