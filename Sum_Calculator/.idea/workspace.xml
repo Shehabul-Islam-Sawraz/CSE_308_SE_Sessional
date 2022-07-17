@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="303fab91-3ec6-4ef8-b094-3f0f0795b0f0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Burger_Shop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Burger_Shop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sum_Calculator/FileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sum_Calculator/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sum_Calculator/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sum_Calculator/SumAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sum_Calculator/SumAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SumAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SumAdapter.java" afterDir="false" />
-    </list>
+    <list default="true" id="303fab91-3ec6-4ef8-b094-3f0f0795b0f0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +54,8 @@
       <workItem from="1655572419661" duration="107000" />
       <workItem from="1655577252604" duration="147000" />
       <workItem from="1655637254855" duration="13000" />
-      <workItem from="1656699853747" duration="385000" />
+      <workItem from="1656699853747" duration="986000" />
+      <workItem from="1657860404675" duration="144000" />
     </task>
     <servers />
   </component>
